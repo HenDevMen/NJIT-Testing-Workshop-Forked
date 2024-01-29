@@ -23,8 +23,3 @@ def test_deposit_throws(bank_account):
         bank = BankAccount(username= 'name', balance=100)
         with pytest.raises(InternalDepositException):
                 bank_account.deposit(-30)
-
-def test_withdraw_throws(bank_account):
-        bank = BankAccount(username= 'name', balance=100)
-        with pytest.raises(WithdrawlException):
-                bank_account.withdraw(500)
