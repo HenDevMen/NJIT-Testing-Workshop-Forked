@@ -92,6 +92,8 @@ class BankAccount:
 
     def deposit(self, amount):
         # TODO implement function
+
+        self.balance = self.balance + amount
         """
         This function should handle adding money to the bank.
         It takes an amount (should be int or float) and will add that to the existing account balance.
