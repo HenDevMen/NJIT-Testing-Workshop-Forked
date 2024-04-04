@@ -116,6 +116,12 @@ class BankAccount:
 
     def withdraw(self, amount):
         # TODO implement function
+        
+        if amount < 0 or amount > self.balance:
+            self.balance = self.balance - amount
+        else:
+            raise WithdrawalException
+
         """
         This function handles taking money out of the bank.
         It takes a numeric amount, and will remove that from the existing account balance if it is less than the balance.
