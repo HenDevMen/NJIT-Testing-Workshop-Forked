@@ -117,7 +117,7 @@ class BankAccount:
     def withdraw(self, amount):
         # TODO implement function
         
-        if amount < 0 or amount > self.balance:
+        if amount > 0 and amount <= self.balance:
             self.balance = self.balance - amount
         else:
             raise WithdrawalException
