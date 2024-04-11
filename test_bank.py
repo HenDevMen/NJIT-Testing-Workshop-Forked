@@ -29,14 +29,13 @@ def test_withdraw_function_successful():
 def test_withdraw_function_overdraft():
     bank_account = BankAccount(username='name', balance=100)
 
-    bank_account.withdraw(150)
-
-    assert bank_account.view_balance() == WithdrawalException
+    with pytest.raises(WithdrawalException):
+        bank_account.withdraw(150)
 
 def test_withdraw_function_unsuccessful():
 
     bank_account = BankAccount(username='name', balance=100)
 
-    bank_account.withdraw(-50)
-
-    assert bank_account.view_balance() == WithdrawalException
+    with pytest.raises(WithdrawalException):
+        bank_account.withdraw(-50)
+        
